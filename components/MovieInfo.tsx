@@ -1,6 +1,6 @@
 import { BASE_URL } from "@/app/constant";
 
-async function getMovie(id: string) {
+export async function getMovie(id: string) {
   const response = await fetch(`${BASE_URL}/${id}`);
   return response.json();
 }
@@ -16,7 +16,7 @@ export default async function MovieInfo({ id }: { id: string }) {
       />
       <div className="flex flex-col mt-5 gap-5">
         <h1 className="text-white text-4xl font-semibold">{movie.title}</h1>
-        <h3>⭐️ {movie.vote_average.toFixed(1)}</h3>
+        <h3>⭐️ {movie.vote_average.toFixed()}</h3>
         <p>{movie.overview}</p>
         <a href={movie.homepage} target={"_blank"}>
           Homepage &rarr;
