@@ -6,23 +6,21 @@ import { usePathname } from "next/navigation";
 export default function Navigation() {
   const path = usePathname();
   return (
-    <div className="flex justify-center items-center ">
-      <nav className="bg-red-500 px-4 py-2 flex justify-center items-center rounded-md w-1/4">
-        <ul className="flex space-x-4">
-          <li className={path === "/" ? "font-bold" : ""}>
-            <Link href="/" className="text-white hover:text-gray-200">
-              Home
-            </Link>
-            {path === "/" ? "🔥" : ""}
-          </li>
-          <li className={path === "/about" ? "font-bold" : ""}>
-            <Link href="/about" className="text-white hover:text-gray-200">
-              About
-            </Link>
-            {path === "/about" ? "🔥" : ""}
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <nav className="nav bg-[#2d2d2d] fixed w-[30%] mx-auto top-5 rounded-full py-5 left-1/2 z-10 transform -translate-x-1/2">
+      <ul className="flex justify-center gap-12">
+        <li className="list-none transition-all duration-100 ease-in-out hover:scale-105">
+          <Link href="/" className="text-white hover:text-gray-200">
+            Home
+          </Link>
+          {path === "/" ? "🔥" : ""}
+        </li>
+        <li className="list-none transition-all duration-100 ease-in-out hover:scale-105">
+          <Link href="/about" className="text-white hover:text-gray-200">
+            About
+          </Link>
+          {path === "/about" ? "🔥" : ""}
+        </li>
+      </ul>
+    </nav>
   );
 }
