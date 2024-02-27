@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import Navigation from "@/components/Navagation";
 
 export const metadata: Metadata = {
-  title: "MOIVES",
+  title: {
+    template: "%s | MOIVES",
+    default: "MOIVES",
+  },
   description: "The best movies in the world.",
 };
 
