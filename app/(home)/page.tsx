@@ -31,9 +31,8 @@ async function getMovies() {
 export default async function Home() {
   const movies = await getMovies();
   return (
-    <div>
-      <h1>All Movies</h1>
-      <ul>
+    <div className="pt-10">
+      <ul className="grid grid-cols-5 gap-6 mx-auto max-w-[90%] w-full">
         {movies.map((movie) => (
           <li key={movie.id}>
             <Link href={`/movies/${movie.id}`}>{movie.title}</Link>
