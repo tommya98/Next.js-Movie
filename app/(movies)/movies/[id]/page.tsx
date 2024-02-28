@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import MovieInfo from "@/components/MovieInfo";
 import MovieVideos from "@/components/MovieVidoes/MovieVideos";
 import { getMovie } from "@/services/movies";
+import LoadingUI from "@/components/LoadingUI";
 
 interface IParams {
   params: { id: string };
@@ -17,10 +18,10 @@ export async function generateMetadata({ params: { id } }: IParams) {
 export default function MovieDetail({ params: { id } }: IParams) {
   return (
     <div>
-      <Suspense fallback={<h1>Loading movie info</h1>}>
+      <Suspense fallback={<LoadingUI />}>
         <MovieInfo id={id} />
       </Suspense>
-      <Suspense fallback={<h1>Loading movie videos</h1>}>
+      <Suspense fallback={<LoadingUI />}>
         <MovieVideos id={id} />
       </Suspense>
     </div>
