@@ -1,4 +1,4 @@
-import { BASE_URL } from "@/app/constant";
+import { BASE_URL } from "@/constant";
 
 export async function getMovie(id: string) {
   const response = await fetch(`${BASE_URL}/${id}`);
