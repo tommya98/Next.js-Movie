@@ -1,3 +1,5 @@
+import LoadingUI from "@/components/LoadingUI";
+
 export default function Loading() {
-  return <h2>Loading a movie</h2>;
+  return <LoadingUI />;
 }
