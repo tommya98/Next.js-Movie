@@ -67,3 +67,36 @@ export interface IMovieVideo {
   published_at: string;
   id: string;
 }
+
+export interface IMovieCredit {
+  adult: boolean;
+  gender: number;
+  id: number;
+  known_for_department: string;
+  name: string;
+  original_name: string;
+  popularity: number;
+  profile_path: string;
+  cast_id: number;
+  character: string;
+  credit_id: string;
+  order: number;
+}
+
+interface IProviderInfo {
+  logo_path: string;
+  provider_id: number;
+  provider_name: string;
+  display_priority: number;
+}
+
+interface IStreamingInfo {
+  link: string;
+  rent?: IProviderInfo[];
+  buy?: IProviderInfo[];
+  flatrate?: IProviderInfo[];
+}
+
+export interface IMovieProvider {
+  [countryCode: string]: IStreamingInfo;
+}
