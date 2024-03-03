@@ -8,7 +8,7 @@ import {
 } from "@/types";
 
 const fetchData = async <T>(url: string): Promise<T> => {
-  const response = await fetch(`${BASE_URL}/${url}`);
+  const response = await fetch(`${BASE_URL}${url && `/${url}`}`);
   const json: T = await response.json();
   return json;
 };
