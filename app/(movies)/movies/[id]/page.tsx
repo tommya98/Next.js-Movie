@@ -5,6 +5,7 @@ import MovieCredits from "@/components/MovieCredits";
 import SimilarMovies from "@/components/SimilarMovies";
 import LoadingUI from "@/components/LoadingUI";
 import { getMovie } from "@/services/movies";
+import MovieTab from "@/components/MovieTab";
 
 interface IParams {
   params: { id: string };
@@ -26,11 +27,11 @@ export default function MovieDetail({ params: { id } }: IParams) {
       <Suspense fallback={<LoadingUI />}>
         <MovieCredits id={id} />
       </Suspense>
-      <Suspense fallback={<LoadingUI />}>
+      {/* <Suspense fallback={<LoadingUI />}>
         <MovieVideos id={id} />
-      </Suspense>
+      </Suspense> */}
       <Suspense fallback={<LoadingUI />}>
-        <SimilarMovies id={id} />
+        <MovieTab id={id} />
       </Suspense>
     </div>
   );
