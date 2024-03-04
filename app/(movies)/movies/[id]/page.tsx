@@ -1,9 +1,10 @@
 import { Suspense } from "react";
 import MovieInfo from "@/components/MovieInfo";
-import MovieVideos from "@/components/MovieVidoes/MovieVideos";
+import MovieVideos from "@/components/MovieVidoes";
 import MovieCredits from "@/components/MovieCredits";
-import { getMovie } from "@/services/movies";
+import SimilarMovies from "@/components/SimilarMovies";
 import LoadingUI from "@/components/LoadingUI";
+import { getMovie } from "@/services/movies";
 
 interface IParams {
   params: { id: string };
@@ -27,6 +28,9 @@ export default function MovieDetail({ params: { id } }: IParams) {
       </Suspense>
       <Suspense fallback={<LoadingUI />}>
         <MovieVideos id={id} />
+      </Suspense>
+      <Suspense fallback={<LoadingUI />}>
+        <SimilarMovies id={id} />
       </Suspense>
     </div>
   );
