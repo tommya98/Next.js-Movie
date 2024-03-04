@@ -16,6 +16,7 @@ export default function MovieTab({ id }: { id: string }) {
             ? "bg-gray-900 text-white"
             : "bg-gray-800 text-white"
         } px-4 py-2 rounded-md hover:bg-gray-700`}
+        prefetch
       >
         Videos
       </Link>
@@ -26,6 +27,7 @@ export default function MovieTab({ id }: { id: string }) {
             ? "bg-gray-900 text-white"
             : "bg-gray-800 text-white"
         } px-4 py-2 rounded-md hover:bg-gray-700`}
+        prefetch
       >
         Similar Movies
       </Link>
