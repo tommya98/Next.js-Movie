@@ -1,5 +1,5 @@
+import SimilarMovies from "@/components/SimilarMovies";
 import { getMovie } from "@/services/movies";
-import MovieVideos from "@/components/MovieVidoes";
 
 interface IParams {
   params: { id: string };
@@ -13,5 +13,5 @@ export async function generateMetadata({ params: { id } }: IParams) {
 }
 
 export default function MovieDetail({ params: { id } }: IParams) {
-  return <MovieVideos id={id} />;
+  return <SimilarMovies id={id} />;
 }
