@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import MovieInfo from "@/components/MovieInfo";
 import MovieVideos from "@/components/MovieVidoes/MovieVideos";
+import MovieCredits from "@/components/MovieCredits";
 import { getMovie } from "@/services/movies";
 import LoadingUI from "@/components/LoadingUI";
 
@@ -20,6 +21,9 @@ export default function MovieDetail({ params: { id } }: IParams) {
     <div>
       <Suspense fallback={<LoadingUI />}>
         <MovieInfo id={id} />
+      </Suspense>
+      <Suspense fallback={<LoadingUI />}>
+        <MovieCredits id={id} />
       </Suspense>
       <Suspense fallback={<LoadingUI />}>
         <MovieVideos id={id} />
